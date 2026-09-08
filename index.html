@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuyBit - Instant Crypto Trading</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Buy<span>Bit</span></div>
+        <ul class="nav-links">
+            <li><a href="#markets">Markets</a></li>
+            <li><a href="#trade">Trade</a></li>
+        </ul>
+        <button id="wallet-btn" class="btn-connect" onclick="connectWallet()">Connect Wallet</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Trade Crypto Instantly with BuyBit</h1>
+        <p>Connect your wallet to trade digital assets directly on-chain.</p>
+    </header>
+
+    <!-- Trading Section -->
+    <section id="trade" class="trade-container">
+        <div class="trade-card">
+            <h2>Instant Swap</h2>
+            <div class="input-group">
+                <label for="pay-amount">You Pay (USD)</label>
+                <input type="number" id="pay-amount" placeholder="0.00" oninput="calculateReceive()">
+            </div>
+            <div class="input-group">
+                <label for="asset-select">Asset</label>
+                <select id="asset-select" onchange="calculateReceive()">
+                    <option value="bitcoin">Bitcoin (BTC)</option>
+                    <option value="ethereum">Ethereum (ETH)</option>
+                    <option value="solana">Solana (SOL)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="receive-amount">You Receive (Est.)</label>
+                <input type="text" id="receive-amount" placeholder="0.00" readonly>
+            </div>
+            <button id="trade-btn" class="btn-primary full-width" onclick="executeTrade()">Connect Wallet to Trade</button>
+        </div>
+    </section>
+
+    <!-- Live Market Prices Table -->
+    <section id="markets" class="market-container">
+        <h2>Live Market Prices</h2>
+        <table class="crypto-table">
+            <thead>
+                <tr>
+                    <th>Asset</th>
+                    <th>Price (USD)</th>
+                    <th>24h Change</th>
+                </tr>
+            </thead>
+            <tbody id="crypto-data">
+                <tr>
+                    <td colspan="3">Loading live market data...</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 BuyBit. Powered by GitHub Pages & Web3.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
